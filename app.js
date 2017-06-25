@@ -165,16 +165,30 @@ $("#myCanvas").one("click", function(e) {
    })
    avgDistance();
 
+   time  = function(n) {
+      if(n>=1){
+        return n-1;
+      }
+   }
+
    $(".btn-primary").click(function(e) {
    		if(flag){
    			for(i=0; i<arrY.length;i++) {
    			context.beginPath();
-  			context.arc(arrX[i],arrY[i],15,0,2*Math.PI);
+  			context.arc(arrX[i],arrY[i],10,0,2*Math.PI);
   			context.stroke();
-  			context.fillStyle = "teal";
+  			context.fillStyle = "rgba(0,128,128,.9)";
   			context.fill();
    		}
-   		$('#message').text("This is what the users guessed!")
+   
+      $('#message').text("This is what the users guessed!");
+      $('#count').text("hiii");
+      var n = 4
+      while(n!= 0) {
+        $('p').text(n);
+        n = n-1;
+        console.log(n)
+      }
 
    		}else {
    			alert("Guess before moving ahead!");
@@ -198,4 +212,12 @@ $("#myCanvas").one("click", function(e) {
 
 function conversion(num) {
 	return (num - 247.71)/(187.81);
+}
+
+function shoot(){
+        context.beginPath();
+        context.arc(arrX[10],arrY[10],20,0,2*Math.PI);
+        context.stroke();
+        context.fillStyle = "rgb(20,20,20)";
+        context.fill();
 }

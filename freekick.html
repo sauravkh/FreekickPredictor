@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="index.css">
 </head>
-<body>
+<body style="background-color: rgba(0,0,0,.8)">
 
 <nav class="navbar navbar-default">
 			<div class="container">
@@ -36,20 +36,106 @@
 
 		<div class="container">
 
-		<h2 id="message" style=" margin-bottom: -30px;">Where do you think he's going to place it?</h2>
+		<h2 id="message" style=" margin-bottom: -30px; color: white">Where do you think he's going to place it?</h2>
 
 		<canvas id="myCanvas" width="900" height="600" style="background-image: url('img/f.jpg'); margin-top: 60px;"></canvas>
-	
+
+		<p id="count" style="margin-left: 35%; color: rgb(250,150,119); font-size: 60px;">1</p>
 			
-		<div class="jumbotron">
-			<button class="btn btn-danger">
+		<div class="jumbotron" style="background-color: rgba(0,0,0,0.3)">
+		<div class="container">
+				<button class="btn btn-danger">
 				Guess Again?
 			</button>
 
-			<button class="btn btn-primary" style="float: right; margin-bottom: 50px;">
-				<h2>Go ahead!</h2>
-			</button>
+			<div>
+				<button onclick="setTimeout(shoot, 3000)" class="btn btn-primary" style="float: right; margin-bottom: 50px;margin-top: -50px;">
+					<h2>See what your friends guessed</h2>
+				</button>
+			</div>
+			
+			<div style="float: right;">
+				<button class="btn" style="margin-top: 100px;margin-right: -1000px;">
+					<h2>Leaderboard</h2>
+				</button>			
+			</div>
 		</div>
+		
+
+		</div>
+
+		<table style="color: white; font-size: 40px;">
+			<thead>
+				<tr>
+					<th>Kick Rank</th>
+					<th>Name</th>
+					<th>Accuracy</th>
+					<th>Overall Rank</th>
+				</tr>			
+			</thead>
+			<tbody>
+				<tr>
+    <th>1</th>
+    <th>John Smith</th>
+    <th>97%</th>
+    <th>32</th>
+</tr>
+<tr>
+    <th>2</th>
+    <th>Abigail Adams</th>
+    <th>94%</th>
+    <th>63</th>
+</tr>
+<tr>
+    <th>3</th>
+    <th>Ernest Evans</th>
+    <th>93%</th>
+    <th>47</th>
+</tr>
+<tr>
+    <th>4</th>
+    <th>Robert Richards</th>
+    <th>87%</th>
+    <th>59</th>
+</tr>
+<tr>
+    <th>5</th>
+    <th>Thomas Truman</th>
+    <th>86%</th>
+    <th>63</th>   
+ </tr>
+<tr>
+    <th>6</th>
+    <th>Cynthia Candace</th>
+    <th>86%</th>
+    <th>67</th>
+</tr>
+<tr>
+    <th>7</th>
+    <th>Paula Poundstone</th>
+    <th>85%</th>
+    <th>72</th>
+</tr>
+<tr>
+    <th>8</th>
+    <th>Lindsey Lambda</th>
+    <th>83%</th>
+    <th>80</th>
+</tr>
+<tr>
+    <th>9</th>
+    <th>Mitchell Mon</th>
+    <th>82%</th>
+    <th>114</th>
+</tr>
+<tr>
+    <th>10</th>
+    <th>William Wanton</th>
+    <th>82%</th>
+    <th>126</th>   
+ </tr>
+			</tbody>
+		</table>
 
 		</div>
 <script

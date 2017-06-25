@@ -1,0 +1,57 @@
+html, body {
+    max-width: 150%;
+    overflow-x: hidden;
+    min-height:100%;position:relative;
+}
+#background-image {
+	background: url("img/1.jpg") no-repeat;
+	background-size: 100%;
+	
+}
+
+.penalty {
+	background: url("img/penalty.jpg") no-repeat;
+	background-size: 100%;
+}
+.corner {
+	background: url("img/corner.jpg") no-repeat;
+	background-size: cover;
+}
+.freekick {
+	background: url("img/freekick.jpg") no-repeat;
+	background-size: cover;
+}
+
+.navbar {
+	background-color: rgba(8,8,8,0.9);
+	border: 0px solid transparent;
+	font-size: 18px;
+	font-weight: bold;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.nav > li > a {
+    color: blue;
+}
+.first {
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100vh;
+}
+
+.box {
+	height: 200px;
+	border: 2px solid black;
+	margin-left: 6%;
+	width:25%;
+	border-radius: 30px;
+}
+
+.boxes {
+	margin-top: 15%;
+
+}
+
+.selected {
+	background-color: teal;
+}

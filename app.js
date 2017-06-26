@@ -129,6 +129,8 @@ context = canvas.getContext('2d');
 
 heatArray = [];
 flag = false;
+  var x;
+  var y;
 
 $(function() {
 $("#myCanvas").one("click", function(e) {
@@ -139,9 +141,11 @@ $("#myCanvas").one("click", function(e) {
 
   context.arc(relativeX,relativeY,15,0,2*Math.PI);
   context.stroke();
-  context.fillStyle = "pink";
+  context.fillStyle = "rgb(0,255,255)";
+  context.lineWidth = 5;
   context.fill();
   flag = true;
+
 });
 });
    
@@ -157,10 +161,12 @@ $("#myCanvas").one("click", function(e) {
 
   		context.arc(relativeX,relativeY,18,0,2*Math.PI);
   		context.stroke();
-  		context.fillStyle = "pink";
+  		context.fillStyle = "rgb(0,255,255)";
   		context.fill();
+      context.lineWidth= 5;
   		flag = true;
-
+      x = relativeX;
+      y = relativeY;
 });
    })
    avgDistance();
@@ -179,21 +185,18 @@ $("#myCanvas").one("click", function(e) {
   			context.stroke();
   			context.fillStyle = "rgba(0,128,128,.9)";
   			context.fill();
-   		}
+        context.closePath();
+		}
    
       $('#message').text("This is what the users guessed!");
-      $('#count').text("hiii");
-      var n = 4
-      while(n!= 0) {
-        $('p').text(n);
-        n = n-1;
-        console.log(n)
-      }
-
    		}else {
    			alert("Guess before moving ahead!");
    		}
    		
+   })
+var n = 4;
+   $('.btn-primary').click(function() {
+      setInterval(function(){ $('count').text("hi"); n=n-1;console.log("lund")}, 3000);
    })
 
  function avgDistance () {
@@ -213,11 +216,19 @@ $("#myCanvas").one("click", function(e) {
 function conversion(num) {
 	return (num - 247.71)/(187.81);
 }
-
+       var can = document.getElementById('myCanvas'),
+        con = can.getContext('2d');
 function shoot(){
+        var audio = new Audio('sounds/strike.mp3');
+        audio.play();
         context.beginPath();
-        context.arc(arrX[10],arrY[10],20,0,2*Math.PI);
+        context.arc(arrX[10],arrY[10],25,0,2*Math.PI);
         context.stroke();
-        context.fillStyle = "rgb(20,20,20)";
+        context.fillStyle = "red";
         context.fill();
+        context.moveTo(arrX[10],arrY[10]);
+        context.lineWidth = 5;
+        context.lineTo(x,y);
+        context.stroke();
+        context.closePath();
 }
